@@ -40,7 +40,7 @@ $GLOBALS['TL_DCA']['tl_page']['fields']['megamenu_enable'] = [
 ];
 
 $GLOBALS['TL_DCA']['tl_page']['fields']['megamenu_hint'] = [
-    'input_field_callback' => function () {
+    'input_field_callback' => static function () {
         System::loadLanguageFile('tl_mega_menu');
 
         return sprintf(
