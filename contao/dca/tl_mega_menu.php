@@ -16,7 +16,6 @@
  */
 
 use Contao\DC_Table;
-use Derhaeuptling\ContaoMegaMenu\DataContainer\DataContainer;
 
 $GLOBALS['TL_DCA']['tl_mega_menu'] = [
 
