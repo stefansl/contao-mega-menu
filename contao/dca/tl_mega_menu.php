@@ -45,12 +45,7 @@ $GLOBALS['TL_DCA']['tl_mega_menu'] = [
             'format' => '%s',
         ],
         'global_operations' => [
-            'all' => [
-                'label'      => &$GLOBALS['TL_LANG']['MSC']['all'],
-                'href'       => 'act=select',
-                'class'      => 'header_edit_all',
-                'attributes' => 'onclick="Backend.getScrollOffset()" accesskey="e"',
-            ],
+            'all'
         ],
         'operations'        => [
             'edit'       => [
