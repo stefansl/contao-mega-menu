@@ -21,17 +21,15 @@ class DataContainer
     /**
      * Display the hint
      */
-    public function displayHint()
+    public function displayHint(): void
     {
         Message::addInfo($GLOBALS['TL_LANG']['tl_mega_menu']['hint']);
     }
 
     /**
      * Get the templates
-     *
-     * @return array
      */
-    public function getTemplates()
+    public function getTemplates(): array
     {
         return Controller::getTemplateGroup('mega_menu_');
     }
