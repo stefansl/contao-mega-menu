@@ -16,6 +16,7 @@
  */
 
 use Contao\DC_Table;
+use Derhaeuptling\ContaoMegaMenu\DataContainer\DataContainer;
 
 $GLOBALS['TL_DCA']['tl_mega_menu'] = [
 
@@ -25,9 +26,6 @@ $GLOBALS['TL_DCA']['tl_mega_menu'] = [
         'enableVersioning' => true,
         'switchToEdit'     => true,
         'ctable'           => ['tl_content'],
-        'onload_callback'  => [
-            ['DataContainer', 'displayHint'],
-        ],
         'sql'              => [
             'keys' => [
                 'id' => 'primary',
@@ -111,7 +109,6 @@ $GLOBALS['TL_DCA']['tl_mega_menu'] = [
             'default'          => 'mega_menu_default',
             'exclude'          => true,
             'inputType'        => 'select',
-            'options_callback' => ['DataContainer', 'getTemplates'],
             'eval'             => ['tl_class' => 'w50'],
             'sql'              => "varchar(255) NOT NULL default ''",
         ],

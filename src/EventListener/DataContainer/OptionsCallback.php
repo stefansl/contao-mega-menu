@@ -1,5 +1,5 @@
 <?php
-namespace Derhaeuptling\EventListener\DataContainer;
+namespace Derhaeuptling\ContaoMegaMenu\EventListener\DataContainer;
 
 use Contao\Controller;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
