@@ -14,6 +14,9 @@
 /**
  * Extend palettes
  */
+
+use Contao\System;
+
 $GLOBALS['TL_DCA']['tl_page']['palettes']['__selector__'][]     = 'megamenu_enable';
 $GLOBALS['TL_DCA']['tl_page']['palettes']['regular']            = str_replace(
     '{protected_legend:hide}',
@@ -45,7 +48,7 @@ $GLOBALS['TL_DCA']['tl_page']['fields']['megamenu_enable'] = [
 
 $GLOBALS['TL_DCA']['tl_page']['fields']['megamenu_hint'] = [
     'input_field_callback' => function () {
-        \Contao\System::loadLanguageFile('tl_mega_menu');
+        System::loadLanguageFile('tl_mega_menu');
 
         return sprintf(
             '<p class="tl_info" style="margin-top:10px;">%s</p>',
