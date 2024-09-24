@@ -25,12 +25,4 @@ class DataContainer
     {
         Message::addInfo($GLOBALS['TL_LANG']['tl_mega_menu']['hint']);
     }
-
-    /**
-     * Get the templates
-     */
-    public function getTemplates(): array
-    {
-        return Controller::getTemplateGroup('mega_menu_');
-    }
 }
