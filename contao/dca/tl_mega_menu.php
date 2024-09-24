@@ -70,7 +70,6 @@ $GLOBALS['TL_DCA']['tl_mega_menu'] = [
             'sql' => "int(10) unsigned NOT NULL default '0'",
         ],
         'name'     => [
-            'label'     => &$GLOBALS['TL_LANG']['tl_mega_menu']['name'],
             'exclude'   => true,
             'search'    => true,
             'inputType' => 'text',
@@ -78,7 +77,6 @@ $GLOBALS['TL_DCA']['tl_mega_menu'] = [
             'sql'       => "varchar(255) NOT NULL default ''",
         ],
         'template' => [
-            'label'            => &$GLOBALS['TL_LANG']['tl_mega_menu']['template'],
             'default'          => 'mega_menu_default',
             'exclude'          => true,
             'inputType'        => 'select',
