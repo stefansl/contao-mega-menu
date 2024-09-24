@@ -19,8 +19,14 @@
     "require": {
         "contao/core-bundle": "^5.3"
     },
+    "conflict": {
+        "contao/manager-plugin": "<2.0 || >=3.0"
+    },
+    "require-dev": {
+        "contao/manager-plugin": "^2.0"
+    },
     "autoload": {
-        "psr-0": {
+        "psr-4": {
             "Derhaeuptling\\MegaMenu\\": "src/"
         }
     },
