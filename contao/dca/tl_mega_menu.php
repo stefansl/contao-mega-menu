@@ -23,7 +23,7 @@ $GLOBALS['TL_DCA']['tl_mega_menu'] = [
         'switchToEdit'     => true,
         'ctable'           => ['tl_content'],
         'onload_callback'  => [
-            ['Derhaeuptling\MegaMenu\DataContainer', 'displayHint'],
+            ['DataContainer', 'displayHint'],
         ],
         'sql'              => [
             'keys' => [
@@ -108,7 +108,7 @@ $GLOBALS['TL_DCA']['tl_mega_menu'] = [
             'default'          => 'mega_menu_default',
             'exclude'          => true,
             'inputType'        => 'select',
-            'options_callback' => ['Derhaeuptling\MegaMenu\DataContainer', 'getTemplates'],
+            'options_callback' => ['DataContainer', 'getTemplates'],
             'eval'             => ['tl_class' => 'w50'],
             'sql'              => "varchar(255) NOT NULL default ''",
         ],

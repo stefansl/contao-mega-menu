@@ -27,7 +27,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Derhaeuptling\\MegaMenu\\": "src/"
+            "Derhaeuptling\\ContaoMegaMenu\\": "src/"
         }
     },
     "extra": {

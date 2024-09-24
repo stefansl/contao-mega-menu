@@ -11,7 +11,7 @@
  * @license LGPL
  */
 
-namespace Derhaeuptling\MegaMenu\Model;
+namespace Derhaeuptling\ContaoMegaMenu\Model;
 
 use Contao\ContentModel;
 use Contao\Model;

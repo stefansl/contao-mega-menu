@@ -11,7 +11,7 @@
  * @license LGPL
  */
 
-namespace derhaeuptling\ContaoMegaMenu\DataContainer;
+namespace Derhaeuptling\ContaoMegaMenu\DataContainer;
 
 use Contao\Controller;
 use Contao\Message;

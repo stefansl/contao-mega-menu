@@ -1,11 +1,11 @@
 <?php
 
-namespace derhaeuptling\Generator;
+namespace Derhaeuptling\ContaoMegaMenu\Generator;
 
 use Contao\ContentModel;
 use Contao\Controller;
 use Contao\FrontendTemplate;
-use Derhaeuptling\MegaMenu\Model\MenuModel;
+use Derhaeuptling\ContaoMegaMenu\Model\MenuModel;
 
 class Generator
 {
