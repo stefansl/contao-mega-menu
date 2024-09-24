@@ -14,11 +14,14 @@
 /**
  * Table tl_mega_menu
  */
+
+use Contao\DC_Table;
+
 $GLOBALS['TL_DCA']['tl_mega_menu'] = [
 
     // Config
     'config'   => [
-        'dataContainer'    => 'Table',
+        'dataContainer'    => DC_Table::class,
         'enableVersioning' => true,
         'switchToEdit'     => true,
         'ctable'           => ['tl_content'],
