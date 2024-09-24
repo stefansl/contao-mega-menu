@@ -5,53 +5,43 @@ namespace Derhaeuptling\MegaMenu;
 use Contao\ContentModel;
 use Contao\Controller;
 use Contao\FrontendTemplate;
+use Derhaeuptling\MegaMenu\Model\MenuModel;
 
 class Generator
 {
     /**
      * Outsiders
-     * @var array
      */
-    private static $outsiders = [];
+    private static array $outsiders = [];
 
     /**
      * Add the outsider buffer
-     *
-     * @param string $buffer
      */
-    public static function addOutsider($buffer)
+    public static function addOutsider(string $buffer): void
     {
         static::$outsiders[] = $buffer;
     }
 
     /**
      * Return true if there are outsiders
-     *
-     * @return bool
      */
-    public static function hasOutsiders()
+    public static function hasOutsiders(): bool
     {
         return count(static::$outsiders) > 0;
     }
 
     /**
      * Get the outsiders
-     *
-     * @return array
      */
-    public static function getOutsiders()
+    public static function getOutsiders(): array
     {
         return static::$outsiders;
     }
 
     /**
      * Generate the menus for the page
-     *
-     * @param int $pageId
-     *
-     * @return string
      */
-    public static function generate($pageId)
+    public static function generate(int $pageId): string
     {
         if (($menu = static::getMenuModel($pageId)) === null) {
             return '';
@@ -77,24 +67,16 @@ class Generator
 
     /**
      * Return true if the page has menus
-     *
-     * @param int $pageId
-     *
-     * @return bool
      */
-    public static function has($pageId)
+    public static function has(int $pageId): bool
     {
         return static::getMenuModel($pageId) !== null;
     }
 
     /**
      * Get the menu model
-     *
-     * @param int $pageId
-     *
-     * @return MenuModel|null
      */
-    private static function getMenuModel($pageId)
+    private static function getMenuModel(int $pageId): ?MenuModel
     {
         return MenuModel::findByPage($pageId);
     }
