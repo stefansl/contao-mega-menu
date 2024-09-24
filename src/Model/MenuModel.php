@@ -15,6 +15,7 @@ namespace Derhaeuptling\MegaMenu\Model;
 
 use Contao\ContentModel;
 use Contao\Model;
+use Contao\Model\Collection;
 use Contao\PageModel;
 
 class MenuModel extends Model
@@ -24,25 +25,24 @@ class MenuModel extends Model
      * @var string
      */
     protected static $strTable = 'tl_mega_menu';
+    /**
+     * @var mixed|null
+     */
+    public mixed $template;
+    private int $id;
 
     /**
      * Get the content elements
-     *
-     * @return \ContentModel|\ContentModel[]|\Model\Collection|null
      */
-    public function getContentElements()
+    public function getContentElements(): ContentModel | Collection | null
     {
         return ContentModel::findPublishedByPidAndTable($this->id, static::getTable());
     }
 
     /**
      * Find the record by page ID
-     *
-     * @param int $pageId
-     *
-     * @return MenuModel|null
      */
-    public static function findByPage($pageId)
+    public static function findByPage(int $pageId): ?MenuModel
     {
         if (($pageModel = PageModel::findByPk($pageId)) === null
             || !$pageModel->megamenu_enable
