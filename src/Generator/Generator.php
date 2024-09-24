@@ -1,6 +1,6 @@
 <?php
 
-namespace Derhaeuptling\MegaMenu;
+namespace derhaeuptling\Generator;
 
 use Contao\ContentModel;
 use Contao\Controller;
