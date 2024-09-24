@@ -15,31 +15,24 @@
  * Extend palettes
  */
 
+use Contao\CoreBundle\DataContainer\PaletteManipulator;
 use Contao\System;
 
 $GLOBALS['TL_DCA']['tl_page']['palettes']['__selector__'][]     = 'megamenu_enable';
-$GLOBALS['TL_DCA']['tl_page']['palettes']['regular']            = str_replace(
-    '{protected_legend:hide}',
-    '{megamenu_legend},megamenu_enable;{protected_legend:hide}',
-    $GLOBALS['TL_DCA']['tl_page']['palettes']['regular']
-);
-$GLOBALS['TL_DCA']['tl_page']['palettes']['redirect']            = str_replace(
-    '{protected_legend:hide}',
-    '{megamenu_legend},megamenu_enable;{protected_legend:hide}',
-    $GLOBALS['TL_DCA']['tl_page']['palettes']['redirect']
-);
-$GLOBALS['TL_DCA']['tl_page']['palettes']['forward']            = str_replace(
-    '{protected_legend:hide}',
-    '{megamenu_legend},megamenu_enable;{protected_legend:hide}',
-    $GLOBALS['TL_DCA']['tl_page']['palettes']['forward']
-);
+PaletteManipulator::create()
+    ->addLegend('megamenu_legend', 'protected_legend', PaletteManipulator::POSITION_BEFORE)
+    ->addField('megamenu_enable', 'megamenu_legend', PaletteManipulator::POSITION_APPEND)
+    ->applyToPalette('regular', 'tl_page')
+    ->applyToPalette('redirect', 'tl_page')
+    ->applyToPalette('forward', 'tl_page')
+;
+
 $GLOBALS['TL_DCA']['tl_page']['subpalettes']['megamenu_enable'] = 'megamenu_hint,megamenu_menu';
 
 /**
  * Add fields
  */
 $GLOBALS['TL_DCA']['tl_page']['fields']['megamenu_enable'] = [
-    'label'     => &$GLOBALS['TL_LANG']['tl_page']['megamenu_enable'],
     'exclude'   => true,
     'inputType' => 'checkbox',
     'eval'      => ['submitOnChange' => true, 'tl_class' => 'clr'],
