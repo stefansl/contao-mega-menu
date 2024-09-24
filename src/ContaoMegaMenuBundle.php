@@ -5,7 +5,7 @@
  use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
  use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
- class ContaoMegaMenu extends AbstractBundle
+ class ContaoMegaMenuBundle extends AbstractBundle
  {
      public function loadExtension(
          array $config,
