@@ -11,7 +11,7 @@
 
                 <?php if (Generator::has($item['id'])): ?>
                     <?php
-                    $GLOBALS['TL_CSS'][] = 'system/modules/mega_menu/assets/megamenu/megamenu.scss||static';
+                    $GLOBALS['TL_CSS'][] = 'bundles/contaomegamenu/megamenu.scss|static';
                     ?>
                     <?= Generator::generate($item['id']) ?>
                 <?php else: ?>
@@ -24,7 +24,7 @@
 
                 <?php if (Generator::has($item['id'])): ?>
                     <?php
-                    $GLOBALS['TL_CSS'][] = 'system/modules/mega_menu/assets/megamenu/megamenu.scss||static';
+                    $GLOBALS['TL_CSS'][] = 'bundles/contaomegamenu/megamenu.css|static';
                     ?>
                     <?= Generator::generate($item['id']) ?>
                 <?php else: ?>
