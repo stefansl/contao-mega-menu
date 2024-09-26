@@ -11,8 +11,8 @@ use Derhaeuptling\ContaoMegaMenu\Generator\Generator;
 
                 <?php if (Generator::has($item['id'])) : ?>
                     <?php
-                    $GLOBALS['TL_CSS'][] = 'system/modules/mega_menu/assets/megamenu/megamenu.scss||static';
-                    $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/mega_menu/assets/megamenu/megamenu.js|static';
+                    $GLOBALS['TL_CSS'][] = 'bundles/contaomegamenu/megamenu.css|static';
+                    $GLOBALS['TL_JAVASCRIPT'][] = 'bundles/contaomegamenu/megamenu.js|static';
                     ?>
                     <?= Generator::generate($item['id']) ?>
                 <?php else : ?>
@@ -31,8 +31,8 @@ use Derhaeuptling\ContaoMegaMenu\Generator\Generator;
 
                 <?php if (Generator::has($item['id'])) : ?>
                     <?php
-                    $GLOBALS['TL_CSS'][] = 'system/modules/mega_menu/assets/megamenu/megamenu.scss||static';
-                    $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/mega_menu/assets/megamenu/megamenu_onClickOnly.js|static';
+                    $GLOBALS['TL_CSS'][] = 'bundles/contaomegamenu/megamenu.css|static';
+                    $GLOBALS['TL_JAVASCRIPT'][] = 'bundles/contaomegamenu/megamenu_onClickOnly.js|static';
                     ?>
                     <?= Generator::generate($item['id']) ?>
                 <?php else : ?>

@@ -31,8 +31,8 @@ use Derhaeuptling\ContaoMegaMenu\Generator\Generator;
 
 <?php if ($this->level === 'level_1' && Generator::hasOutsiders()): ?>
     <?php
-    $GLOBALS['TL_CSS'][] = 'system/modules/mega_menu/assets/megamenu/megamenu.css||static';
-    $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/mega_menu/assets/megamenu/megamenu.js|static';
+    $GLOBALS['TL_CSS'][] = 'bundles/contaomegamenu/megamenu.css|static';
+    $GLOBALS['TL_JAVASCRIPT'][] = 'bundles/contaomegamenu/megamenu.js|static';
     ?>
     <div class="mm_dropdown_wrapper">
         <?= implode("\n", Generator::getOutsiders()) ?>
