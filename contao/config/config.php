@@ -14,6 +14,9 @@
 /**
  * Backend modules
  */
+
+use Derhaeuptling\ContaoMegaMenu\Model\MenuModel;
+
 $GLOBALS['BE_MOD']['design']['mega_menu'] = [
     'tables' => ['tl_mega_menu', 'tl_content'],
 ];
@@ -21,4 +24,4 @@ $GLOBALS['BE_MOD']['design']['mega_menu'] = [
 /**
  * Models
  */
-$GLOBALS['TL_MODELS']['tl_mega_menu'] = 'Derhaeuptling\ContaoMegaMenu\Model\MenuModel';
+$GLOBALS['TL_MODELS']['tl_mega_menu'] = MenuModel::class;
