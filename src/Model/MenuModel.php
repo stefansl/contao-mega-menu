@@ -18,6 +18,13 @@ use Contao\Model;
 use Contao\Model\Collection;
 use Contao\PageModel;
 
+
+/**
+ * add properties for IDE support
+ *
+ * @property int $id
+ * @propery string $template
+ */
 class MenuModel extends Model
 {
     /**
@@ -25,11 +32,6 @@ class MenuModel extends Model
      * @var string
      */
     protected static $strTable = 'tl_mega_menu';
-    /**
-     * @var mixed|null
-     */
-    public mixed $template;
-    private int $id;
 
     /**
      * Get the content elements
@@ -49,6 +51,8 @@ class MenuModel extends Model
         ) {
             return null;
         }
+
+        dump($pageModel->megamenu_menu);
 
         return static::findByPk($pageModel->megamenu_menu);
     }

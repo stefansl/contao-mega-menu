@@ -1,0 +1,5 @@
+<div class="mm_dropdown mm_<?= $this->id ?>">
+	<div class="inner">
+		<?= $this->buffer ?>
+	</div>
+</div>
