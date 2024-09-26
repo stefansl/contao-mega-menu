@@ -1,0 +1,35 @@
+.mod_navigation.dropdown {
+    overflow: visible;
+}
+.mod_navigation li.mm_container > a, .mod_navigation li.mm_container > span, .mod_navigation li.mm_container > strong {
+    position: relative;
+}
+.mod_navigation li.mm_container:not(.mm_container_onClickOnly):hover > a:after, .mod_navigation li.mm_container:not(.mm_container_onClickOnly):hover > strong:after, .mod_navigation li.mm_container.mm_container_onClickOnly.mm_isActive > a:after, .mod_navigation li.mm_container.mm_container_onClickOnly.mm_isActive > strong:after {
+    /* hide (overlay)border bottom of main menu */
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -3px;
+    height: 3px;
+    background-color: #F4F2F0;
+    z-index: 110;
+}
+.mod_navigation li.mm_container .mm_dropdown {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+.mod_navigation li.mm_container .mm_dropdown > .inner {
+    padding: 1rem 2rem;
+    border: 1px solid #E5DFDC;
+    background-color: rgba(244, 242, 240, 0.95);
+    overflow: hidden;
+}
+.mod_navigation li.mm_container:not(.mm_container_onClickOnly):hover .mm_dropdown, .mod_navigation li.mm_container.mm_container_onClickOnly .mm_isActive ~ .mm_dropdown {
+    display: block;
+}* {
+    background-color: black
+}
