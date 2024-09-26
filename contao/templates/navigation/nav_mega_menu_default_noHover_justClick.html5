@@ -25,7 +25,6 @@ use Derhaeuptling\ContaoMegaMenu\Generator\Generator;
                     title="<?= $item['pageTitle'] ?: $item['title'] ?>" 
                     class="<?php if ($extraClass) echo 'mm_link_onClickOnly'; ?> <?= $item['class'] ?>"
                     <?php if ($item['accesskey']) echo ' accesskey="' . $item['accesskey'] . '"'; ?>
-                    <?php if ($item['tabindex']) echo ' tabindex="' . $item['tabindex'] . '"'; ?>
                     <?php if ($item['nofollow']) echo ' rel="nofollow"'; ?>
                     <?= $item['target'] ?><?php if (!empty($item['subitems'])) echo ' aria-haspopup="true"'; ?>>
                     <?= $item['link'] ?>
