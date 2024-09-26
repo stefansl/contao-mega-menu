@@ -21,4 +21,4 @@ $GLOBALS['BE_MOD']['design']['mega_menu'] = [
 /**
  * Models
  */
-$GLOBALS['TL_MODELS']['tl_mega_menu'] = 'Derhaeuptling\MegaMenu\MenuModel';
+$GLOBALS['TL_MODELS']['tl_mega_menu'] = 'Derhaeuptling\ContaoMegaMenu\Model\MenuModel';
