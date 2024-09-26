@@ -30,6 +30,4 @@
 }
 .mod_navigation li.mm_container:not(.mm_container_onClickOnly):hover .mm_dropdown, .mod_navigation li.mm_container.mm_container_onClickOnly .mm_isActive ~ .mm_dropdown {
     display: block;
-}* {
-    background-color: black
 }
