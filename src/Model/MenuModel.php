@@ -52,8 +52,6 @@ class MenuModel extends Model
             return null;
         }
 
-        dump($pageModel->megamenu_menu);
-
         return static::findByPk($pageModel->megamenu_menu);
     }
 }
