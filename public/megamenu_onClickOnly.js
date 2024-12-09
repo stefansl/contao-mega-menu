@@ -23,7 +23,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     mm_container.forEach(container => {
       // console.log("each test for outside");
-      if (container.contains(event.target)) { isClickInside = true };
+      if (container.contains(event.target)) { isClickInside = true }
     })
   
     if (!isClickInside) {

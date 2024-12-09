@@ -14,18 +14,14 @@
 /**
  * Backend modules
  */
-array_insert(
-    $GLOBALS['BE_MOD']['design'],
-    2,
-    [
-        'mega_menu' => [
-            'tables' => ['tl_mega_menu', 'tl_content'],
-            'icon'   => 'system/modules/mega_menu/assets/icon.png',
-        ],
-    ]
-);
+
+use Derhaeuptling\ContaoMegaMenu\Model\MenuModel;
+
+$GLOBALS['BE_MOD']['design']['mega_menu'] = [
+    'tables' => ['tl_mega_menu', 'tl_content'],
+];
 
 /**
  * Models
  */
-$GLOBALS['TL_MODELS']['tl_mega_menu'] = 'Derhaeuptling\MegaMenu\MenuModel';
+$GLOBALS['TL_MODELS']['tl_mega_menu'] = MenuModel::class;
