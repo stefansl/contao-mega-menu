@@ -14,7 +14,10 @@
 /**
  * Dynamically add the parent table
  */
-if (\Contao\Input::get('do') === 'mega_menu') {
+
+use Contao\Input;
+
+if (Input::get('do') === 'mega_menu') {
     $GLOBALS['TL_DCA']['tl_content']['config']['ptable']                  = 'tl_mega_menu';
     $GLOBALS['TL_DCA']['tl_content']['list']['sorting']['headerFields'][] = 'name';
 }

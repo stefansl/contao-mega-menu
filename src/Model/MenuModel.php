@@ -11,12 +11,20 @@
  * @license LGPL
  */
 
-namespace Derhaeuptling\MegaMenu;
+namespace Derhaeuptling\ContaoMegaMenu\Model;
 
 use Contao\ContentModel;
 use Contao\Model;
+use Contao\Model\Collection;
 use Contao\PageModel;
 
+
+/**
+ * add properties for IDE support
+ *
+ * @property int $id
+ * @propery string $template
+ */
 class MenuModel extends Model
 {
     /**
@@ -27,22 +35,16 @@ class MenuModel extends Model
 
     /**
      * Get the content elements
-     *
-     * @return \ContentModel|\ContentModel[]|\Model\Collection|null
      */
-    public function getContentElements()
+    public function getContentElements(): ContentModel | Collection | null
     {
         return ContentModel::findPublishedByPidAndTable($this->id, static::getTable());
     }
 
     /**
      * Find the record by page ID
-     *
-     * @param int $pageId
-     *
-     * @return MenuModel|null
      */
-    public static function findByPage($pageId)
+    public static function findByPage(int $pageId): ?MenuModel
     {
         if (($pageModel = PageModel::findByPk($pageId)) === null
             || !$pageModel->megamenu_enable

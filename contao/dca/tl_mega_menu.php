@@ -14,17 +14,17 @@
 /**
  * Table tl_mega_menu
  */
+
+use Contao\DC_Table;
+
 $GLOBALS['TL_DCA']['tl_mega_menu'] = [
 
     // Config
     'config'   => [
-        'dataContainer'    => 'Table',
+        'dataContainer'    => DC_Table::class,
         'enableVersioning' => true,
         'switchToEdit'     => true,
         'ctable'           => ['tl_content'],
-        'onload_callback'  => [
-            ['Derhaeuptling\MegaMenu\DataContainer', 'displayHint'],
-        ],
         'sql'              => [
             'keys' => [
                 'id' => 'primary',
@@ -45,40 +45,14 @@ $GLOBALS['TL_DCA']['tl_mega_menu'] = [
             'format' => '%s',
         ],
         'global_operations' => [
-            'all' => [
-                'label'      => &$GLOBALS['TL_LANG']['MSC']['all'],
-                'href'       => 'act=select',
-                'class'      => 'header_edit_all',
-                'attributes' => 'onclick="Backend.getScrollOffset()" accesskey="e"',
-            ],
+            'all'
         ],
         'operations'        => [
-            'edit'       => [
-                'label' => &$GLOBALS['TL_LANG']['tl_mega_menu']['edit'],
-                'href'  => 'table=tl_content',
-                'icon'  => 'edit.gif',
-            ],
-            'editheader' => [
-                'label' => &$GLOBALS['TL_LANG']['tl_mega_menu']['editheader'],
-                'href'  => 'act=edit',
-                'icon'  => 'header.gif',
-            ],
-            'copy'       => [
-                'label' => &$GLOBALS['TL_LANG']['tl_mega_menu']['copy'],
-                'href'  => 'act=copy',
-                'icon'  => 'copy.gif',
-            ],
-            'delete'     => [
-                'label'      => &$GLOBALS['TL_LANG']['tl_mega_menu']['delete'],
-                'href'       => 'act=delete',
-                'icon'       => 'delete.gif',
-                'attributes' => 'onclick="if(!confirm(\''.($GLOBALS['TL_LANG']['MSC']['deleteConfirm'] ?? NULL).'\'))return false;Backend.getScrollOffset()"',
-            ],
-            'show'       => [
-                'label' => &$GLOBALS['TL_LANG']['tl_mega_menu']['show'],
-                'href'  => 'act=show',
-                'icon'  => 'show.gif',
-            ],
+            'edit',
+            'children',
+            'copy',
+            'delete',
+            'show',
         ],
     ],
 
@@ -96,7 +70,6 @@ $GLOBALS['TL_DCA']['tl_mega_menu'] = [
             'sql' => "int(10) unsigned NOT NULL default '0'",
         ],
         'name'     => [
-            'label'     => &$GLOBALS['TL_LANG']['tl_mega_menu']['name'],
             'exclude'   => true,
             'search'    => true,
             'inputType' => 'text',
@@ -104,11 +77,9 @@ $GLOBALS['TL_DCA']['tl_mega_menu'] = [
             'sql'       => "varchar(255) NOT NULL default ''",
         ],
         'template' => [
-            'label'            => &$GLOBALS['TL_LANG']['tl_mega_menu']['template'],
             'default'          => 'mega_menu_default',
             'exclude'          => true,
             'inputType'        => 'select',
-            'options_callback' => ['Derhaeuptling\MegaMenu\DataContainer', 'getTemplates'],
             'eval'             => ['tl_class' => 'w50'],
             'sql'              => "varchar(255) NOT NULL default ''",
         ],
