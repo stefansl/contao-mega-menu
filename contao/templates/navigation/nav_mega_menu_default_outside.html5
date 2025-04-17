@@ -12,7 +12,7 @@ use Derhaeuptling\ContaoMegaMenu\Generator\Generator;
                 <?php if (Generator::has($item['id'])): ?>
                     <?php Generator::addOutsider(Generator::generate($item['id'])) ?>
                 <?php else: ?>
-                    <?= $item['subitems'] ?>
+                    <?= $item['subitems'] ?? '' ?>
                 <?php endif; ?>
             </li>
         <?php else: ?>
@@ -22,7 +22,7 @@ use Derhaeuptling\ContaoMegaMenu\Generator\Generator;
                 <?php if (Generator::has($item['id'])): ?>
                     <?php Generator::addOutsider(Generator::generate($item['id'])) ?>
                 <?php else: ?>
-                    <?= $item['subitems'] ?>
+                    <?= $item['subitems'] ?? '' ?>
                 <?php endif; ?>
             </li>
         <?php endif; ?>
