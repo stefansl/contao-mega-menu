@@ -15,7 +15,7 @@
                     ?>
                     <?= Generator::generate($item['id']) ?>
                 <?php else: ?>
-                    <?= $item['subitems'] ?>
+                    <?= $item['subitems'] ?? '' ?>
                 <?php endif; ?>
             </li>
         <?php else: ?>
@@ -28,7 +28,7 @@
                     ?>
                     <?= Generator::generate($item['id']) ?>
                 <?php else: ?>
-                    <?= $item['subitems'] ?>
+                    <?= $item['subitems'] ?? '' ?>
                 <?php endif; ?>
             </li>
         <?php endif; ?>

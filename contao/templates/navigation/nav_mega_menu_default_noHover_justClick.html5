@@ -16,7 +16,7 @@ use Derhaeuptling\ContaoMegaMenu\Generator\Generator;
                     ?>
                     <?= Generator::generate($item['id']) ?>
                 <?php else : ?>
-                    <?= $item['subitems'] ?>
+                    <?= $item['subitems'] ?? '' ?>
                 <?php endif; ?>
             </li>
         <?php else : ?>
@@ -36,7 +36,7 @@ use Derhaeuptling\ContaoMegaMenu\Generator\Generator;
                     ?>
                     <?= Generator::generate($item['id']) ?>
                 <?php else : ?>
-                    <?= $item['subitems'] ?>
+                    <?= $item['subitems'] ?? '' ?>
                 <?php endif; ?>
                 </li>
             <?php endif; ?>
